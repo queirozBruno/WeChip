@@ -19,5 +19,19 @@ namespace Modelo.Tabelas
         [StringLength(5)]
         [Index(IsUnique = true)]
         public string ProdutoCodigo { get; set; }
+
+        public Produto()
+        {
+
+        }
+
+        public Produto(long? produtoId, string produtoDescricao, double produtoPreco, string produtoTipo, string produtoCodigo)
+        {
+            ProdutoId = produtoId;
+            ProdutoDescricao = produtoDescricao;
+            ProdutoPreco = produtoPreco;
+            ProdutoTipo = produtoTipo;
+            ProdutoCodigo = produtoCodigo;
+        }
     }
 }

@@ -14,5 +14,20 @@ namespace Modelo.Tabelas
         public string ClienteTelefone { get; set; }
 
         public Status Status { get; set; }
+
+        public Cliente() 
+        {
+
+        }
+
+        public Cliente(long? clienteId, string clienteNome, string clienteCpf, double clienteCredito, string clienteTelefone, Status status)
+        {
+            ClienteId = clienteId;
+            ClienteNome = clienteNome;
+            ClienteCpf = clienteCpf;
+            ClienteCredito = clienteCredito;
+            ClienteTelefone = clienteTelefone;
+            Status = status;
+        }
     }
 }
