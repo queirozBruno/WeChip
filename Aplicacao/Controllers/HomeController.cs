@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servico.Tabelas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Aplicacao.Controllers
 {
     public class HomeController : Controller
     {
+        private ClienteServico clienteServico = new ClienteServico();
         public ActionResult Index()
         {
             return View();
@@ -26,5 +28,12 @@ namespace Aplicacao.Controllers
 
             return View();
         }
+
+        public ActionResult TesteExcluir()
+        {
+            return View(clienteServico.ObterTodosClientes());
+        }
+
+
     }
 }
