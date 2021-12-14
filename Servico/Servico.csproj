@@ -45,6 +45,10 @@
     <Compile Include="Tabelas\ClienteServico.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{6aef3274-e6ff-4415-932c-a95f52d7047b}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Persistencia\Persistencia.csproj">
       <Project>{0bb6b0ab-409f-4f77-8324-6f6c8ebf60d5}</Project>
       <Name>Persistencia</Name>

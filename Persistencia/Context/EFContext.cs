@@ -42,7 +42,7 @@ namespace Persistencia.Context
         {
             if (context.Clientes.Any() || context.Status.Any())
             {
-                return; //Se o BD já foi populado não vai executar o código restante do método
+                return; //Se o BD já foi populado não vai executar o restante do método
             }
 
             Status s1 = new Status(1, "Nome Livre", "Não", "Não", "0001");
