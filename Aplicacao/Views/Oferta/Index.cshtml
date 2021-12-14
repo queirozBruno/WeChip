@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Modelo.Tabelas.Cliente>
+
+@{
+    ViewBag.Title = "Oferta - Selecionar Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Selecione um cliente</h2>
+<hr />
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StatusId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteNome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteCpf)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteCredito)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteTelefone)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StatusId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteNome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteCpf)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteCredito)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteTelefone)
+                    </th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StatusId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClienteNome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClienteCpf)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClienteCredito)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClienteTelefone)
+                        </td>
+                        <td>
+                            <button class="btn btn-primary oferta" data-id="@item.ClienteId">Ofertar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal" id="modalOferta"></div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $(".oferta").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modalOferta").load("/oferta/oferta?id=" + id, function () {
+                    $("#modalOferta").modal();
+                })
+            });
+        })
+    </script>
+}

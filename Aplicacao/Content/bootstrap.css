@@ -17,7 +17,11 @@ aside,
 details,
 figcaption,
 figure,
-footer,
+footer {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
 header,
 hgroup,
 main,

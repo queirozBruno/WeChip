@@ -9,6 +9,8 @@ namespace Modelo.Tabelas
         [Key]
         public long? ClienteId { get; set; }
 
+        public long StatusId { get; set; }
+
         [Required(ErrorMessage = "O nome do cliente é obrigatório")]
         [Display(Name = "Nome do Cliente")]
         public string ClienteNome { get; set; }
@@ -18,7 +20,6 @@ namespace Modelo.Tabelas
         public string ClienteCpf { get; set; }
 
         [Display(Name = "Crédito")]
-        [DataType(DataType.Currency)]
         public double? ClienteCredito { get; set; }
 
         [Required(ErrorMessage = "O telefone do cliente é obrigatório")]

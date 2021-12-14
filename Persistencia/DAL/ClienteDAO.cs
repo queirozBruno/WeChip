@@ -19,10 +19,14 @@ namespace Persistencia.DAL
             else
             {
                 context.Entry(cliente).State = EntityState.Modified;
-            }
+            }            
             context.SaveChanges();
         }
 
+        public Cliente ObterClientePorId(long? id) => context.Clientes.Where(c => c.ClienteId == id).FirstOrDefault();
+
         public IQueryable ObterTodosClientes() => context.Clientes;
+
+        public IQueryable ObterTodosClientesNaoFinalizados() => context.Clientes.Include(s => s.Status).Where(c => c.Status.StatusFinalizaCliente != "Sim");
     }
 }
