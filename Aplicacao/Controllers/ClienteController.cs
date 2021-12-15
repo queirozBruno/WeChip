@@ -27,7 +27,7 @@ namespace Aplicacao.Controllers
                 if (ModelState.IsValid)
                 {
                     clienteServico.GravarCliente(cliente);
-                    return RedirectToAction("Create");
+                    return RedirectToAction("Index", "Oferta");
                 }
                 return View(cliente);
             }

@@ -16,14 +16,14 @@ namespace Persistencia.Context
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<EFContext, ContextMigrationConfiguration>(true));
         }
 
-        //Aqui estou dizendo que determinada classe é uma tabela do banco de dados.
+        // Mapeamento das classes para tabelas do banco de dados
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Status> Status { get; set; }
         public DbSet<Oferta> Ofertas { get; set; }
         public DbSet<OfertaProduto> OfertaProdutos { get; set; }
 
-        //resolve o problema da pluralização das tabelas
+        // resolve o problema da pluralização das tabelas
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

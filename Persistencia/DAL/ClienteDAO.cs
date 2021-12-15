@@ -23,7 +23,7 @@ namespace Persistencia.DAL
             context.SaveChanges();
         }
 
-        public Cliente ObterClientePorId(long? id) => context.Clientes.Where(c => c.ClienteId == id).FirstOrDefault();
+        public Cliente ObterClientePorId(long? id) => context.Clientes.Where(c => c.ClienteId == id).Include(s => s.Status).FirstOrDefault();
 
         public IQueryable ObterTodosClientes() => context.Clientes;
 

@@ -15,5 +15,9 @@ namespace Servico.Tabelas
         public IQueryable<Produto> ObterTodosProdutos() => produtoDAO.ObterTodosProdutos();
 
         public double ValorProdutoPorId(double id) => produtoDAO.ValorProdutoPorId(id);
+
+        public bool VerificaSeJaExisteCodigoProduto(string codigo) => produtoDAO.VerificaSeJaExisteCodigoProduto(codigo);
+
+        public void GravarProduto(Produto produto) => produtoDAO.GravarProduto(produto);
     }
 }

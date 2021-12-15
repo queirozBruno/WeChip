@@ -25,5 +25,7 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
+
+        public List<Oferta> ObterTodasOfertas() => context.Ofertas.Include(c => c.Cliente).ToList();
     }
 }

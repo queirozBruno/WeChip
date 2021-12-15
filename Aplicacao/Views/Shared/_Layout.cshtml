@@ -29,9 +29,9 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()    
+        @RenderBody()
         <hr />
-        <footer>            
+        <footer>
             <p>&copy; @DateTime.Now.Year - code7</p>
         </footer>
     </div>
@@ -39,5 +39,12 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @if (ViewBag.Erro != null && ViewBag.Erro != "")
+    {
+        <script>
+        alert('@ViewBag.Erro')
+        </script>
+    }
 </body>
 </html>

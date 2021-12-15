@@ -29,14 +29,6 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.Cliente.ClienteId)
 
-                    <div class="form-group" hidden="hidden">
-                        @Html.LabelFor(model => model.Cliente.StatusId, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Cliente.StatusId, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cliente.StatusId, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         @Html.LabelFor(model => model.Cliente.ClienteNome, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -54,20 +46,29 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Cliente.ClienteCredito, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Cliente.ClienteCredito, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cliente.ClienteCredito, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         @Html.LabelFor(model => model.Cliente.ClienteTelefone, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.Cliente.ClienteTelefone, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Cliente.ClienteTelefone, "", new { @class = "text-danger" })
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cliente.ClienteCredito, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.ClienteCredito, new { htmlAttributes = new { @class = "form-control", disabled = "true" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.ClienteCredito, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("", "Status Atual", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.Status.StatusDescricao, new { htmlAttributes = new { @class = "form-control", disabled = "true" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.Status.StatusDescricao, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
 
                     <hr /><h4>Endereço de Entrega</h4>
 
@@ -157,14 +158,14 @@
                                                 @Html.DisplayFor(modelItem => item.ProdutoDescricao)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.ProdutoPreco, new { @type="" })
+                                                @Html.DisplayFor(modelItem => item.ProdutoPreco, new { @type = "" })
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.ProdutoTipo)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.ProdutoCodigo)
-                                            </td>                                            
+                                            </td>
                                         </tr>
                                     }
                                 </tbody>
@@ -229,3 +230,9 @@
         }
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
+
+<script>
+    function validaOferta() {
+
+    }
+</script>

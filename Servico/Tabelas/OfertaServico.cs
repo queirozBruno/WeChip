@@ -1,10 +1,6 @@
 ﻿using Modelo.Tabelas;
 using Persistencia.DAL;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servico.Tabelas
 {
@@ -13,5 +9,7 @@ namespace Servico.Tabelas
         private OfertaDAO ofertaDAO = new OfertaDAO();
 
         public void GravarOferta(Oferta oferta) => ofertaDAO.GravarOferta(oferta);
+
+        public List<Oferta> ObterTodasOfertas() => ofertaDAO.ObterTodasOfertas();
     }
 }

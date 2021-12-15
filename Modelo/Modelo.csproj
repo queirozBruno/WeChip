@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiModels\Vendas.cs" />
     <Compile Include="Enums\TipoProduto.cs" />
     <Compile Include="Tabelas\Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

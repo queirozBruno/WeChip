@@ -22,5 +22,7 @@ namespace Persistencia.DAL
             }
             context.SaveChanges();
         }
+
+        public IQueryable<Produto> ObterOfertaProdutoPorOfertaId(long id) => context.OfertaProdutos.Where(op => op.OfertaId == id).Include(p => p.Produto).Select(p => p.Produto);
     }
 }
