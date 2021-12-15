@@ -20,6 +20,8 @@ namespace Persistencia.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Status> Status { get; set; }
+        public DbSet<Oferta> Ofertas { get; set; }
+        public DbSet<OfertaProduto> OfertaProdutos { get; set; }
 
         //resolve o problema da pluralização das tabelas
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -59,10 +61,10 @@ namespace Persistencia.Context
             Produto p3 = new Produto(3, "Monitor 17'", 350.00, "HARDWARE", "00200");
             Produto p4 = new Produto(4, "Pen Drive 8 GB", 30.00, "HARDWARE", "00211");
             Produto p5 = new Produto(5, "Pen Drive 16 GB", 50.00, "HARDWARE", "00314");
-            Produto p6 = new Produto(6, "AVAST", 199.99, "HARDWARE", "00459");
-            Produto p7 = new Produto(7, "Pacote Office", 499.00, "HARDWARE", "01104");
-            Produto p8 = new Produto(8, "Spotify (3 meses)", 45.50, "HARDWARE", "01108");
-            Produto p9 = new Produto(9, "Netflix (1 mês)", 19.90, "HARDWARE", "01107");
+            Produto p6 = new Produto(6, "AVAST", 199.99, "SOFTWARE", "00459");
+            Produto p7 = new Produto(7, "Pacote Office", 499.00, "SOFTWARE", "01104");
+            Produto p8 = new Produto(8, "Spotify (3 meses)", 45.50, "SOFTWARE", "01108");
+            Produto p9 = new Produto(9, "Netflix (1 mês)", 19.90, "SOFTWARE", "01107");
 
             List<Status> listStatus = new List<Status> { s1, s2, s3, s4, s5, s6 };
             List<Produto> listProduto = new List<Produto> { p1, p2, p3, p4, p5, p6, p7, p8, p9 };

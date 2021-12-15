@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Modelo.Tabelas
@@ -20,13 +19,15 @@ namespace Modelo.Tabelas
         public string ClienteCpf { get; set; }
 
         [Display(Name = "Crédito")]
-        public double? ClienteCredito { get; set; }
+        public double ClienteCredito { get; set; }
 
         [Required(ErrorMessage = "O telefone do cliente é obrigatório")]
         [Display(Name = "Telefone do Cliente")]
         public string ClienteTelefone { get; set; }
 
         public Status Status { get; set; }
+
+        public ICollection<Oferta> Ofertas { get; set; }
 
         //Método construtor sem parâmetros
         public Cliente() 

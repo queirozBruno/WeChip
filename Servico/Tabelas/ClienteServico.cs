@@ -17,9 +17,7 @@ namespace Servico.Tabelas
         {
             if (cliente.ClienteId == null) // Se estiver CRIANDO um cliente, adiciona o objeto status que contém a descrição "Nome Livre". Se estiver ALTERANDO só chama o método GravarCliente()
             {
-                Status status = statusDAO.RecuperarStatusPorDescricao("Nome Livre");
-                cliente.StatusId = (long)status.StatusId;
-                status = null;
+                cliente.StatusId = statusDAO.ObterIdStatusPorDescricao("Nome Livre");
             }
 
             clienteDAO.GravarCliente(cliente);

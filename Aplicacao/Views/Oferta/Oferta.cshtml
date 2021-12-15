@@ -1,15 +1,15 @@
-﻿@model Modelo.Tabelas.Cliente
+﻿@model Modelo.ViewModels.OfertaViewModel
 
 @{
     Layout = null;
 }
 
-<div class="modal-dialog">
+<div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
             <div style="display:flex">
                 <div style="width:97%">
-                    <h3 class="modal-title" style="color: #7eb000" id="modalVisualizar">Informações da Empresa</h3>
+                    <h3 class="modal-title" id="modalVisualizar">Oferta</h3>
                 </div>
                 <div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:red">
@@ -18,61 +18,214 @@
                 </div>
             </div>
         </div>
-        <div class="modal-body">
-            <div>
+        @using (Html.BeginForm())
+        {
+            <div class="modal-body">
+
+                @Html.AntiForgeryToken()
+
                 <h4>Cliente</h4>
-                <hr />
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.StatusId)
-                    </dt>
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Cliente.ClienteId)
 
-                    <dd>
-                        @Html.DisplayFor(model => model.StatusId)
-                    </dd>
+                    <div class="form-group" hidden="hidden">
+                        @Html.LabelFor(model => model.Cliente.StatusId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.StatusId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.StatusId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ClienteNome)
-                    </dt>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cliente.ClienteNome, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.ClienteNome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.ClienteNome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.ClienteNome)
-                    </dd>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cliente.ClienteCpf, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.ClienteCpf, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.ClienteCpf, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ClienteCpf)
-                    </dt>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cliente.ClienteCredito, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.ClienteCredito, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.ClienteCredito, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.ClienteCpf)
-                    </dd>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cliente.ClienteTelefone, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Cliente.ClienteTelefone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Cliente.ClienteTelefone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ClienteCredito)
-                    </dt>
+                    <hr /><h4>Endereço de Entrega</h4>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.ClienteCredito)
-                    </dd>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaRua, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaRua, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaRua, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ClienteTelefone)
-                    </dt>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaNumero, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaNumero, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaNumero, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.ClienteTelefone)
-                    </dd>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaComplemento, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaComplemento, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaComplemento, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-                </dl>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaBairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaBairro, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaBairro, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaCidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaCidade, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaCidade, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaEstado, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaEstado, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaEstado, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Oferta.OfertaCep, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Oferta.OfertaCep, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Oferta.OfertaCep, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <hr /><h4>Produtos</h4>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayName("Descrição")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Preço")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Tipo")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Código")
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Produtos)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBox("Produto" + item.ProdutoId.ToString())
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ProdutoDescricao)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ProdutoPreco, new { @type="" })
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ProdutoTipo)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ProdutoCodigo)
+                                            </td>                                            
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <hr /><h4>Status</h4>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayName("Descrição")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Finaliza Cliente")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Contabiliza Venda")
+                                        </th>
+                                        <th>
+                                            @Html.DisplayName("Cód. Status")
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Statuses)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.RadioButtonFor(modelItem => item.StatusId, item.StatusId)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StatusDescricao)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StatusFinalizaCliente)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StatusContabilizaVenda)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StatusCodigo)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.ClienteId }) |
-                @Html.ActionLink("Back to List", "Index")
-            </p>
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default">Fechar</button>
-        </div>
+            <div class="modal-footer">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        }
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->

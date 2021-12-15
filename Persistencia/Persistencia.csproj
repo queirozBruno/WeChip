@@ -68,6 +68,9 @@
   <ItemGroup>
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="DAL\ClienteDAO.cs" />
+    <Compile Include="DAL\OfertaDAO.cs" />
+    <Compile Include="DAL\OfertaProdutoDAO.cs" />
+    <Compile Include="DAL\ProdutoDAO.cs" />
     <Compile Include="DAL\StatusDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

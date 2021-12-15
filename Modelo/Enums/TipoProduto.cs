@@ -9,6 +9,6 @@ namespace Modelo.Enums
     public enum TipoProduto
     {
         HARDWARE,
-        SOFTWAERE
+        SOFTWARE
     }
 }

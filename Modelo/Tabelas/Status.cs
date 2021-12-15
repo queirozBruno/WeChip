@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Modelo.Tabelas
@@ -8,9 +7,17 @@ namespace Modelo.Tabelas
     {
         [Key]
         public long? StatusId { get; set; }
+
+        [Display(Name = "Descrição")]
         public string StatusDescricao { get; set; }
+
+        [Display(Name = "Finaliza Cliente")]
         public string StatusFinalizaCliente { get; set; }
+
+        [Display(Name = "Contabiliza Venda")]
         public string StatusContabilizaVenda { get; set; }
+
+        [Display(Name = "Código")]
         public string StatusCodigo { get; set; }
 
         //Método construtor sem parâmetros

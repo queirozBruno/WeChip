@@ -13,6 +13,8 @@ namespace Persistencia.DAL
         private EFContext context = new EFContext();
 
         // Consultas utilizando LINQ e Expressões LAMBDA
-        public Status RecuperarStatusPorDescricao(string descricao) => context.Status.Where(s => s.StatusDescricao == descricao).FirstOrDefault();
+        public long ObterIdStatusPorDescricao(string descricao) => context.Status.Where(s => s.StatusDescricao == descricao).Select(s => (long)s.StatusId).FirstOrDefault();
+
+        public IQueryable<Status> ObterTodosStatus() => context.Status;
     }
 }

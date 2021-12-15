@@ -54,8 +54,11 @@
     <Compile Include="Enums\TipoProduto.cs" />
     <Compile Include="Tabelas\Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabelas\Oferta.cs" />
+    <Compile Include="Tabelas\OfertaProduto.cs" />
     <Compile Include="Tabelas\Produto.cs" />
     <Compile Include="Tabelas\Status.cs" />
+    <Compile Include="ViewModels\OfertaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
